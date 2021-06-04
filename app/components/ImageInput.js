@@ -1,4 +1,5 @@
 import React, { useEffect } from "react";
+import { Image } from "react-native";
 import * as ImagePicker from "expo-image-picker";
 import {
   View,

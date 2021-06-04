@@ -1,23 +1,11 @@
-import React, { useState } from "react";
-import AppScreen from "./app/components/AppScreen";
-import ImageInputList from "./app/components/ImageInputList";
+import { NavigationContainer } from "@react-navigation/native";
+import React from "react";
+import AuthNavigator from "./app/components/navigation/AuthNavigator";
 
 export default function App() {
-  const [imageUris, setImageUris] = useState([]);
-  const handleAdd = (uri) => {
-    setImageUris([...imageUris, uri]);
-  };
-  const handleRemove = (uri) => {
-    setImageUris(imageUris.filter((imageUri) => imageUri != uri));
-  };
-
   return (
-    <AppScreen>
-      <ImageInputList
-        imageUri={imageUris}
-        onAddImage={handleAdd}
-        onRemoveImage={handleRemove}
-      ></ImageInputList>
-    </AppScreen>
+    <NavigationContainer>
+      <AuthNavigator />
+    </NavigationContainer>
   );
 }
